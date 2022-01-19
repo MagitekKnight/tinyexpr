@@ -150,6 +150,9 @@ static double ncr(double n, double r) {
     return result;
 }
 static double npr(double n, double r) {return ncr(n, r) * fac(r);}
+static double min(double x, double y) {
+    if (x > y){return y;} else {return x;}
+}
 
 #ifdef _MSC_VER
 #pragma function (ceil)
@@ -177,6 +180,7 @@ static const te_variable functions[] = {
     {"log", log10,    TE_FUNCTION1 | TE_FLAG_PURE, 0},
 #endif
     {"log10", log10,  TE_FUNCTION1 | TE_FLAG_PURE, 0},
+    {"min", min,      TE_FUNCTION2 | TE_FLAG_PURE, 0},
     {"ncr", ncr,      TE_FUNCTION2 | TE_FLAG_PURE, 0},
     {"npr", npr,      TE_FUNCTION2 | TE_FLAG_PURE, 0},
     {"pi", pi,        TE_FUNCTION0 | TE_FLAG_PURE, 0},
